@@ -1,0 +1,109 @@
+/* --- ESTILOS GENERALES (Maialen) --- */
+
+/* He creado esta clase para que todos los cuadros se vean iguales al principio */
+.square, .item {
+    width: 90px;         /* los he hecho de 90 para que haya aire */
+    height: 90px;
+    background-color: #4a69bd; /* un azul que me gusta mas que el de serie */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: bold;
+    margin: 6px;         /* para que no esten pegados */
+    border-radius: 6px;  /* les he dado un toque redondeado */
+}
+
+/* --- SOLUCIONES DE LOS EJERCICIOS --- */
+
+/* Ejercicio 1: Poner los cuadros en fila */
+.flexOne {
+    display: flex;
+}
+
+/* Ejercicio 2: En vertical (columna) */
+.flexTwo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Ejercicio 3: En fila pero empezando por la derecha */
+.flexThree {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* Ejercicio 4: El del salto de linea (wrap) */
+.flexFour {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 320px;          /* ancho limitado para forzar el salto */
+    background-color: #3d8b6d; 
+    padding: 8px;
+}
+
+/* Ejercicio 5: El cuadro que crece (el elástico) */
+.flexFive {
+    display: flex;
+    width: 350px;
+}
+#grow {
+    flex-grow: 1.5;        /* he probado con 2 pero 1.5 me gusta mas como queda */
+    background-color: #0b6643; /* lo pongo mas oscuro para que destaque */
+}
+
+/* Ejercicio 6: Jugando con los espacios (justify-content) */
+.flexSix {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    background-color: #f7f7f7; /* gris flojito para ver el fondo */
+}
+.flexSix .one { display: flex; justify-content: space-around; }
+.flexSix .two { 
+    display: flex; 
+    justify-content: space-between; 
+    margin: 40px 0;         /* separacion para que no se amontone */
+    background-color: #e0e0e0; 
+}
+.flexSix .three { display: flex; justify-content: space-evenly; }
+
+/* Ejercicio 7: Columnas verticales */
+.flexSeven {
+    display: flex;
+    justify-content: space-between;
+    height: 380px;
+    width: 480px;
+}
+.flexSeven div { 
+    display: flex; 
+    flex-direction: column; 
+}
+.flexSeven .one { justify-content: center; }
+.flexSeven .two { justify-content: flex-end; }
+.flexSeven .three { justify-content: flex-start; }
+.flexSeven .four { justify-content: space-between; }
+
+/* Ejercicio 8: Alinear al centro y abajo (align-items) */
+.flexEight {
+    display: flex;
+    height: 350px;
+    background-color: #eeeeee;
+}
+.flexEight .one { display: flex; align-items: center; }
+.flexEight .two { display: flex; align-items: flex-end; }
+.flexEight .three { display: flex; align-items: flex-start; }
+
+/* Ejercicio 9: El que se mueve solo (align-self) */
+.flexNine {
+    display: flex;
+    height: 220px;
+    background-color: #f1f1f1;
+    align-items: flex-start;  /* todos arriba por defecto */
+    justify-content: space-evenly;
+}
+#special {
+    align-self: flex-end;     /* este lo mando yo abajo solo */
+    background-color: #c0392b; /* lo pongo rojo para que se note que es el especial */
+}
