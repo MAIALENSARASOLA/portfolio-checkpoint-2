@@ -1,125 +1,198 @@
-/* --- ESTILOS BASE --- */
+/* flex.css */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+  padding: 40px 0;
+  display: grid;
+  gap: 70px;
+  justify-items: center;
+}
+
+/* Base square */
 .square {
-    width: 90px;
-    height: 90px;
-    background-color: #4a69bd; 
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: sans-serif;
-    font-weight: bold;
-    border-radius: 4px;
+  width: 100px;
+  height: 100px;
+  background: #72e6c2;
 }
 
-/* Flexbox 1: Fila con margen 5px */
+/* ---------------------------
+   Flexbox 1
+--------------------------- */
 .flexOne {
-    display: flex;
+  display: flex;
 }
+
 .flexOne .square {
-    margin: 5px;
+  margin: 5px;
 }
 
-/* Flexbox 2: Columna con margen 2px */
+/* ---------------------------
+   Flexbox 2
+--------------------------- */
 .flexTwo {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
+
 .flexTwo .square {
-    margin: 2px;
+  margin: 2px;
 }
 
-/* Flexbox 3: Reverse pero alineado a la izquierda */
+/* ---------------------------
+   Flexbox 3 
+--------------------------- */
 .flexThree {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end; /* Truco: reverse + end = visualmente a la izquierda */
-}
-.flexThree .square {
-    margin: 5px;
+  display: flex;
 }
 
-/* Flexbox 4: Wrap y color verde */
+/* ---------------------------
+   Flexbox 4 
+--------------------------- */
 .flexFour {
-    display: flex;
-    width: 350px;
-    flex-flow: wrap;
-    background-color: #3d8b6d;
+  display: flex;
+  width: 350px;
+  flex-flow: row wrap;
+  background-color: transparent; 
 }
+
 .flexFour .square {
-    margin: 5px;
+  margin: 5px;
 }
 
-/* Flexbox 5: Grow con ID grow */
+/* ---------------------------
+   Flexbox 5
+--------------------------- */
 .flexFive {
-    display: flex;
-    width: 350px;
+  display: flex;
+  width: 350px;
 }
+
 .flexFive .item {
-    background-color: #0b6643;
-    width: 100px;
-    height: 100px;
-    margin: 2px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100px;
+  height: 100px;
+  background-color: #0b6643;
+  margin: 2px;
 }
+
 #grow {
-    flex-grow: 2;
+  flex-grow: 2;
 }
 
-/* Flexbox 6: Justify Content Column */
+/* ---------------------------
+   Flexbox 6 ( 3 filas)
+--------------------------- */
 .flexSix {
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 500px;
-    background-color: #f1f1f1;
+  width: 500px;
+  height: 400px;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: column;
 }
-.flexSix .one, .flexSix .two, .flexSix .three { display: flex; }
-.flexSix .one { justify-content: space-around; }
-.flexSix .two { 
-    justify-content: space-between; 
-    margin: 50px 0; 
-    background-color: #d6d6d6; 
-}
-.flexSix .three { justify-content: space-evenly; }
 
-/* Flexbox 7: 4 Columnas con justify-content vertical */
+.flexSix .one,
+.flexSix .two,
+.flexSix .three {
+  display: flex;
+}
+
+.flexSix .one {
+  justify-content: space-around;
+}
+
+.flexSix .two {
+  justify-content: space-between;
+  margin: 50px 0;
+  background: #d6d6d6;
+}
+
+.flexSix .three {
+  justify-content: space-evenly;
+}
+
+/* ---------------------------
+   OJO: usar > div para NO afectar a .square
+--------------------------- */
 .flexSeven {
-    display: flex;
-    justify-content: space-between;
-    height: 400px;
-    width: 500px;
+  height: 400px;
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  background: #f1f1f1;
 }
-.flexSeven div { display: flex; flex-direction: column; }
-.flexSeven .one { justify-content: center; }
-.flexSeven .two { justify-content: flex-end; }
-.flexSeven .three { justify-content: flex-start; }
-.flexSeven .four { justify-content: space-between; }
 
-/* Flexbox 8: Align items */
+/* Esto es para que las columnas estén en vertical.
+   Si lo pongo sin el > también cambia los cuadrados y se descuadra todo */
+.flexSeven > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexSeven .one {
+  justify-content: center;
+}
+
+.flexSeven .two {
+  justify-content: flex-end;
+}
+
+.flexSeven .three {
+  justify-content: flex-start;
+}
+
+.flexSeven .four {
+  justify-content: space-between;
+}
+
+/* ---------------------------
+ Flexbox 8 
+--------------------------- */
 .flexEight {
-    display: flex;
-    height: 400px;
-    width: 300px;
-    background-color: #eeeeee;
+  height: 400px;
+  width: 300px;
+  background: #eeeeee;
+  display: flex;
 }
-.flexEight .one, .flexEight .two, .flexEight .three { display: flex; }
-.flexEight .one { align-items: center; }
-.flexEight .two { align-items: flex-end; }
-.flexEight .three { align-items: flex-start; }
 
-/* Flexbox 9: Align self */
-.flexNine {
-    display: flex;
-    width: 450px;
-    height: 250px;
-    background-color: #eeeeee;
-    align-items: flex-start;
-    justify-content: space-evenly;
+.flexEight .one,
+.flexEight .two,
+.flexEight .three {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
+
+.flexEight .one {
+  align-items: center;
+}
+
+.flexEight .two {
+  align-items: flex-end;
+}
+
+.flexEight .three {
+  align-items: flex-start;
+}
+
+/* ---------------------------
+Flexbox 9
+--------------------------- */
+.flexNine {
+  width: 450px;
+  height: 250px;
+  background: #eeeeee;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
 #special {
-    align-self: flex-end;
+  align-self: flex-end;
 }
